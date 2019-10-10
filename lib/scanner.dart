@@ -40,14 +40,14 @@ class _StatsPageState extends State<StatsPage> {
   Widget build(BuildContext context) {
     //  var deviceSize = MediaQuery.of(context).size;
     return Scaffold(
-      
-      
       floatingActionButton: FloatingActionButton(
         elevation: 0.0,
         onPressed: _scanQR,
-        child: Icon(Icons.camera_alt,color: Colors.white,),
+        child: Icon(
+          Icons.camera_alt,
+          color: Colors.white,
+        ),
         backgroundColor: Color(0xFFF8C436),
-
       ),
       body: ListView(
         children: <Widget>[
@@ -147,26 +147,35 @@ class _StatsPageState extends State<StatsPage> {
             padding: EdgeInsets.only(left: 15, right: 15, top: 15),
             height: 530,
             width: double.infinity,
-            color:  Colors.white,
+            color: Colors.white,
             child: Column(
               children: <Widget>[
-                
                 itemList(context, result),
-                SizedBox(height: 390,),
-              InkWell(
-                onTap: (){ Navigator.of(context).pushNamed('/pay');},
-                              child: Container(
-                                height: 50,
-                  width: 130,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF8C436),
-                    borderRadius: BorderRadius.circular(30),
-                    
-                  ),
-                 child: Center(child: Text('Pay',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),),),
+                SizedBox(
+                  height: 390,
                 ),
-              ),
-
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/pay');
+                  },
+                  child: Container(
+                    height: 50,
+                    width: 130,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF8C436),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Pay',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -177,7 +186,6 @@ class _StatsPageState extends State<StatsPage> {
         centerTitle: true,
         title: Text('Your Cart'),
         actions: <Widget>[
-         
           IconButton(
             icon: Icon(
               Icons.shopping_cart,
@@ -194,10 +202,7 @@ class _StatsPageState extends State<StatsPage> {
 Widget itemList(
   BuildContext context,
   String title,
-
-
 ) {
-
   bool onticked = false;
   var deviceSize = MediaQuery.of(context).size;
   return Padding(
@@ -207,13 +212,17 @@ Widget itemList(
       child: Center(
         child: Row(
           children: <Widget>[
-            SizedBox(width: 30,),
+            SizedBox(
+              width: 30,
+            ),
             Container(
-             
-              child:  Text(title,maxLines: 1,),
+              child: Text(
+                title,
+                maxLines: 1,
+              ),
             ),
             SizedBox(
-              width: deviceSize.width/2.5,
+              width: deviceSize.width / 2.5,
             ),
             Checkbox(
               value: onticked,

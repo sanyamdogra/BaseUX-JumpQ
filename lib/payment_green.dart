@@ -34,7 +34,7 @@ class _PaymentGreenState extends State<PaymentGreen> {
                       topRight: Radius.circular(20)),
                 ),
                 padding: EdgeInsets.only(left: 15, right: 15, top: 15),
-                height: deviceSize.height / 1.29,
+                height: deviceSize.height / 1.26,
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +51,7 @@ class _PaymentGreenState extends State<PaymentGreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Invoice DateTime:',
+                              'DateTime:',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20),
                             ),
@@ -59,14 +59,14 @@ class _PaymentGreenState extends State<PaymentGreen> {
                               height: 5,
                             ),
                             Text(
-                              'Bill No.',
+                              'Bill No:',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20),
                             ),
                           ],
                         ),
                         SizedBox(
-                          width: 70,
+                          width: 20,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,12 +85,25 @@ class _PaymentGreenState extends State<PaymentGreen> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             ),
+                           
                           ],
                         ),
+                         SizedBox(
+                              width: 150,
+                            ),
+                         Column(
+                          children: <Widget>[
+                            Text('3',
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 80),
+                        
+                            ),
+                          ],
+                        ),
+
                       ],
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 20,
                     ),
                     Container(
                       height: 50,
@@ -134,7 +147,6 @@ class _PaymentGreenState extends State<PaymentGreen> {
                         ),
                       ),
                     ),
-                   
                     SizedBox(
                       height: deviceSize.height / 5,
                     ),
