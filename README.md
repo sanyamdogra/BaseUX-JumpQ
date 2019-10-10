@@ -20,6 +20,10 @@ Scan the products, pay for them online and breeze out from the store. But as in 
 * Firestore Database, so that the consumers will have the their purchase history and retail store owners have a clear idea about the availability of items.
 * Firebase ML Kit for barcode scanning.
 
+### Future scalability of Idea
+* Vitual tour of the store using AR
+* Can be extended to areas like food courts and office Cafeterias.
+
 
 
 
