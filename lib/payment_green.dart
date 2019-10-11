@@ -135,9 +135,17 @@ class _PaymentGreenState extends State<PaymentGreen> {
                     SizedBox(
                       height: 30,
                     ),
-                    itemDetails(context, 'Lays', '90g', 1, 35),
+                    itemDetails(context, 'Haldiram Chips', '90g', 1, 5, 3.5),
                     SizedBox(
-                      height: deviceSize.height / 12,
+                      height: 30,
+                    ),
+                    itemDetails(context, 'Mountain Dew', '300ml', 1, 20, 3.8),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    itemDetails(context, 'Fresca Mango', '50g', 1, 15,3.15),
+                    SizedBox(
+                      height: deviceSize.height / 16,
                     ),
                     Center(
                       child: Container(
@@ -148,7 +156,7 @@ class _PaymentGreenState extends State<PaymentGreen> {
                       ),
                     ),
                     SizedBox(
-                      height: deviceSize.height / 5,
+                      height: deviceSize.height / 7,
                     ),
                     Container(
                       height: 50,
@@ -175,7 +183,7 @@ class _PaymentGreenState extends State<PaymentGreen> {
                             width: deviceSize.width / 2.5,
                           ),
                           Text(
-                            '₹35.0',
+                            '₹40.0',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -196,7 +204,7 @@ class _PaymentGreenState extends State<PaymentGreen> {
 }
 
 Widget itemDetails(BuildContext context, String title, String weight,
-    int quantity, double price) {
+    int quantity, double price, double distance) {
   var deviceSize = MediaQuery.of(context).size;
   var calcPrice = quantity * price;
   return Padding(
@@ -227,7 +235,7 @@ Widget itemDetails(BuildContext context, String title, String weight,
                 ],
               ),
               SizedBox(
-                width: deviceSize.width / 2.2,
+                width: deviceSize.width / distance,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

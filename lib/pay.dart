@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+// import 'dart:math';
 
 class Pay extends StatefulWidget {
   @override
@@ -11,14 +11,14 @@ class _PayState extends State<Pay> {
   Widget build(BuildContext context) {
     
 
-final _random = new Random();
+// final _random = new Random();
 
-/**
- * Generates a positive random integer uniformly distributed on the range
- * from [min], inclusive, to [max], exclusive.
- */
-int next(int min, int max) => min + _random.nextInt(max - min);
-int generate=next(20, 100);
+// /**
+//  * Generates a positive random integer uniformly distributed on the range
+//  * from [min], inclusive, to [max], exclusive.
+//  */
+// int next(int min, int max) => min + _random.nextInt(max - min);
+// int generate=next(20, 100);
     
     return Scaffold(
       appBar: AppBar(
@@ -73,7 +73,7 @@ int generate=next(20, 100);
               Padding(
                 padding: EdgeInsets.only(left: 15, top: 100),
                 child: Text(
-                  "₹$generate",
+                  "₹40",
                   style: TextStyle(
                     fontFamily: 'ProductSans',
                     fontSize: 110,

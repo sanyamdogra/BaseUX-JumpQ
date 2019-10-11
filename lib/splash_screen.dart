@@ -49,7 +49,7 @@ Future<bool> fetchPost(url, {Map body}) async {
   //   return Post.fromJson(json.decode(response.body));
   // });
   String json =
-      '{"storename":"Planet Needs","productname":"Drink","quantity":"1","date":"2019-10-10T19:33:46.349Z"}';
+      '{"storename":"Planet Needs","productname":"Eateries","quantity":"3","date":"2019-10-10T19:33:46.349Z"}';
 
   // var storeList = [
   //   {

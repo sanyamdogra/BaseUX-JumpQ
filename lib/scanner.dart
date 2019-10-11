@@ -11,11 +11,25 @@ class StatsPage extends StatefulWidget {
 
 class _StatsPageState extends State<StatsPage> {
   String result = 'Your cart is empty';
+
+  var _listViewData = new List<String>();
   Future _scanQR() async {
     try {
       String qrResult = await BarcodeScanner.scan();
       setState(() {
         result = qrResult;
+        if(result=="8904063220226"){
+          result=" Haldiram Chips: Rs 5";
+          
+        }
+        else if(result=="8902080000128"){
+            result="Mountain Dew: Rs 20";
+        }
+        else if(result=="8906070590286"){
+            result="Fresca Mango: Rs 15";
+        }
+        _listViewData.add(result);
+        print(_listViewData);
       });
     } on PlatformException catch (ex) {
       if (ex.code == BarcodeScanner.CameraAccessDenied) {
@@ -150,9 +164,25 @@ class _StatsPageState extends State<StatsPage> {
             color: Colors.white,
             child: Column(
               children: <Widget>[
-                itemList(context, result),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: _listViewData.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return new Column(
+                        children: <Widget>[
+                          new ListTile(
+                            title: new Text(_listViewData[index]),
+                          ),
+                          new Divider(
+                            height: 2.0,
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
                 SizedBox(
-                  height: 390,
+                  height: 100,
                 ),
                 InkWell(
                   onTap: () {

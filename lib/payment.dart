@@ -8,12 +8,14 @@ class Payment extends StatefulWidget {
 }
 
 class _PaymentState extends State<Payment> {
-   @override
-   void initState() {
-    
-      super.initState();
-      Timer(Duration(seconds: 3), (){ Navigator.of(context).pushReplacementNamed('/paymentgreen');});
-    }
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacementNamed('/paymentgreen');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
@@ -128,11 +130,19 @@ class _PaymentState extends State<Payment> {
                     SizedBox(
                       height: 30,
                     ),
-                    itemDetails(context, 'Lays', '90g', 1, 35),
-                    
-                    SizedBox(height: deviceSize.height/3,),
+                    itemDetails(context, 'Haldiram Chips', '90g', 1, 5, 3.5),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    itemDetails(context, 'Mountain Dew', '300ml', 1, 20, 3.8),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    itemDetails(context, 'Fresca Mango', '50g', 1, 15, 3.15),
+                    SizedBox(
+                      height: deviceSize.height / 16,
+                    ),
                     Container(
-                      
                       height: 50,
                       width: deviceSize.width,
                       color: Color(0xFFF8C436),
@@ -146,7 +156,6 @@ class _PaymentState extends State<Payment> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18),
                           ),
-                         
                           Text(
                             'Amount',
                             style: TextStyle(
@@ -154,9 +163,11 @@ class _PaymentState extends State<Payment> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18),
                           ),
-                           SizedBox(width: deviceSize.width/2.5,),
+                          SizedBox(
+                            width: deviceSize.width / 2.5,
+                          ),
                           Text(
-                            '₹35.0',
+                            '₹40.0',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -177,7 +188,7 @@ class _PaymentState extends State<Payment> {
 }
 
 Widget itemDetails(BuildContext context, String title, String weight,
-    int quantity, double price) {
+    int quantity, double price, double distance) {
   var deviceSize = MediaQuery.of(context).size;
   var calcPrice = quantity * price;
   return Padding(
@@ -208,7 +219,7 @@ Widget itemDetails(BuildContext context, String title, String weight,
                 ],
               ),
               SizedBox(
-                width: deviceSize.width / 2.2,
+                width: deviceSize.width / distance,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
